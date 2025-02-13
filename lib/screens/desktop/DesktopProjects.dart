@@ -14,7 +14,7 @@ class DesktopProjects extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: ProjectDesktopView(context),
+          child: ProjectDesktopView(context),  // desktopview
         ),
       ],
     );
