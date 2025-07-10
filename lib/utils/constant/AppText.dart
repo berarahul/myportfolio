@@ -35,6 +35,14 @@ class AppText{
   static String aboutBodyText12="➤Figma";
   static String aboutBodyText13="➤Linux";
   static String aboutBodyText14="➤My Sql";
+static String postgreSql="➤PostgreSql";
+static String mongoDB="➤MongoDB";
+static String nodeJs="➤NodeJs";
+static String docker="➤Docker";
+static String postman="➤Postman";
+static String ApiIntegration="➤Api Integration";
+static String supaBase="➤Supabase";
+
   static String aboutBodyText15="Name:";
   static String aboutBodyText16="Rahul Bera";
   static String aboutBodyText17="Email:";

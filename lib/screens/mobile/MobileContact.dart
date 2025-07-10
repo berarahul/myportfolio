@@ -109,13 +109,13 @@ Widget _buildContactCard(Map<String, dynamic> contact) {
               boxShadow: [
                 BoxShadow(
                   color: Colors.white.withOpacity(0.7),
-                  spreadRadius: 3,
-                  blurRadius: 10,
+                  spreadRadius: 0.1,
+                  blurRadius: 2,
                 ),
                 BoxShadow(
                   color: Colors.black.withOpacity(0.7),
-                  spreadRadius: 3,
-                  blurRadius: 10,
+                  spreadRadius: 0.1,
+                  blurRadius: 2,
                 ),
               ],
               border: Border.all(

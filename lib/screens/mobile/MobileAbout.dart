@@ -174,44 +174,37 @@ Widget MobileAboutContainer2(BuildContext context) {
           const SizedBox(
             height: 5,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Wrap(
+              spacing: 8,
+              runSpacing: 6,
+              children: [
                 AppText.aboutBodyText7,
+                AppText.aboutBodyText8,
+                AppText.aboutBodyText9,
+                AppText.aboutBodyText10,
+                AppText.aboutBodyText11,
+                AppText.aboutBodyText12,
+                AppText.aboutBodyText13,
+                AppText.aboutBodyText14,
+                AppText.postgreSql,
+                AppText.mongoDB,
+                AppText.nodeJs,
+                AppText.postman,
+                AppText.docker,
+                AppText.ApiIntegration,
+                AppText.supaBase,
+              ].map((text) => Text(
+                text,
                 style: TextStyle(
-                    color: AppColors.secondaryColor, fontFamily: "Neuton-Bold"),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(AppText.aboutBodyText8,
-                  style: TextStyle(
-                      color: AppColors.secondaryColor,
-                      fontFamily: "Neuton-Bold")),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(AppText.aboutBodyText9,
-                  style: TextStyle(
-                      color: AppColors.secondaryColor,
-                      fontFamily: "Neuton-Bold")),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(AppText.aboutBodyText10,
-                  style: TextStyle(
-                      color: AppColors.secondaryColor,
-                      fontFamily: "Neuton-Bold")),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(AppText.aboutBodyText11,
-                  style: TextStyle(
-                      color: AppColors.secondaryColor,
-                      fontFamily: "Neuton-Bold")),
-            ],
+                  color: AppColors.secondaryColor,
+                  fontFamily: "Neuton-Bold",
+                ),
+              )).toList(),
+            ),
           ),
+
           const SizedBox(
             height: 5,
           ),

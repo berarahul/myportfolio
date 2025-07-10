@@ -16,9 +16,13 @@ import '../../controller/dpCardController.dart';
 class DesktopHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
       children: [
-        DesktopContainer1(),
+        Column(
+          children: [
+            DesktopContainer1(),
+          ],
+        ),
       ],
     );
   }
@@ -26,7 +30,6 @@ class DesktopHome extends StatelessWidget {
 
 // DesktopContainer1 widget with text and social media icons inside separate containers
 Widget DesktopContainer1() {
-  final ShakeController shakeController = Get.put(ShakeController()); // Inject the controller
   final DpCardController dpController = Get.put(DpCardController()); // Register the controller
 
   return SingleChildScrollView(
@@ -50,99 +53,92 @@ Widget DesktopContainer1() {
                 const SizedBox(
                   height: 45,
                 ),
-                Container(
-                  padding: const EdgeInsets.all(30),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [Colors.white12, Colors.black],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.white.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
-                        offset: Offset(0, 0),
-                      ),
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
-                        offset: Offset(0, 0),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ShaderMask(
-                        shaderCallback: (Rect bounds) {
-                          return const LinearGradient(
-                            colors: [
-                              Colors.white,
-                              Colors.white
-                            ], // Gradient colors  // child: Text(
-
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ).createShader(bounds);
-                        },
-                        child: Text(
-                          "${AppText.bodyText1} 👋", // String interpolation ke liye ${variableName} ka use karte hain
-                          style: const TextStyle(
-                            fontFamily: "Neuton-Extrabold",
-                            color: Colors.white, // Set a color (won't be visible but required)
-                            fontSize: 20,
-                            height: 1.5,
+                Stack(
+                  children: [
+                    // const Positioned.fill(child: BloodDripBackgroundPainter()), // 🔥 this is the animated blood layer
+                    Container(
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Colors.white12, Colors.black],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            spreadRadius: 0.1,
+                            blurRadius: 2,
+                            color: Colors.white.withOpacity(0.7),
+                            offset: const Offset(0, 0),
                           ),
-                        ),
-
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        AppText.bodyText2,
-                        style: TextStyle(
-                          fontFamily: "Neuton-Extrabold",
-
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.secondaryColor,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      // Text(
-                      //   AppText.bodyText3,
-                      //   style: TextStyle(
-                      //     fontFamily: "Poppins-ExtraLightItalic",
-                      //     fontSize: 20,
-                      //     color: AppColors.secondaryColor,
-                      //   ),
-                      // ),
-                      AnimatedTextKit(
-                        animatedTexts: [
-                          ...textList.map(
-                                (text) => TyperAnimatedText(
-                              text,
-                              textStyle: TextStyle(
-                                fontFamily: "Neuton-Extrabold",
-                                fontSize: 15,
-                                color: AppColors.secondaryColor,
-                              ),
-                              speed: const Duration(milliseconds: 80),
-                            ),
+                          BoxShadow(
+                            spreadRadius: 0.1,
+                            blurRadius: 2,
+                            color: Colors.black.withOpacity(0.7),
+                            offset: const Offset(0, 0),
                           ),
                         ],
-                        totalRepeatCount: 1000000, // Animation will play once
-                        pause: const Duration(milliseconds: 500), // Pause before next animation
-                        displayFullTextOnTap: true, // Show full text on tap
-                        stopPauseOnTap: true, // Continue animation on tap
                       ),
-                    ],
-                  ),
-                ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ShaderMask(
+                            shaderCallback: (Rect bounds) {
+                              return const LinearGradient(
+                                colors: [Colors.white, Colors.white],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ).createShader(bounds);
+                            },
+                            child: Text(
+                              "${AppText.bodyText1} 👋",
+                              style: const TextStyle(
+                                fontFamily: "Neuton-Extrabold",
+                                color: Colors.white,
+                                fontSize: 20,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            AppText.bodyText2,
+                            style: TextStyle(
+                              fontFamily: "Neuton-Extrabold",
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.secondaryColor,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+                          AnimatedTextKit(
+                            animatedTexts: [
+                              ...textList.map(
+                                    (text) => TyperAnimatedText(
+                                  text,
+                                  textStyle: TextStyle(
+                                    fontFamily: "Neuton-Extrabold",
+                                    fontSize: 15,
+                                    color: AppColors.secondaryColor,
+                                  ),
+                                  speed: const Duration(milliseconds: 80),
+                                ),
+                              ),
+                            ],
+                            totalRepeatCount: 1000000,
+                            pause: const Duration(milliseconds: 500),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                          ),
+                        ],
+                      ),
+                    ),
+                    // BloodDripBackgroundPainter(), // ✅ JUST THIS - rest untouched
+                  ],
+                )
+,
                 const SizedBox(height: 200),
                 // Container for Social Media Icons
                 Expanded(
@@ -176,6 +172,16 @@ Widget DesktopContainer1() {
               ],
             ),
           ),
+
+
+
+
+
+
+
+
+
+
           // Expanded(
           //
           //   flex: 3,
@@ -304,14 +310,14 @@ Widget DesktopContainer1() {
                       boxShadow: [
                         BoxShadow(
                           color: dpController.borderColor.value, // Observable border color for shadow
-                          spreadRadius: 3,
-                          blurRadius: 10,
+                          spreadRadius: 0.1,
+                          blurRadius: 2,
                           offset: Offset(0, 0),
                         ),
                         BoxShadow(
                           color: Colors.black.withOpacity(0.7),
-                          spreadRadius: 3,
-                          blurRadius: 10,
+                          spreadRadius: 0.1,
+                          blurRadius: 2,
                           offset: Offset(0, 0),
                         ),
                       ],
@@ -337,14 +343,14 @@ Widget DesktopContainer1() {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.white.withOpacity(0.7),
-                          spreadRadius: 3,
-                          blurRadius: 10,
+                          spreadRadius: 0.1,
+                          blurRadius: 2,
                           offset: const Offset(0, 0),
                         ),
                         BoxShadow(
                           color: Colors.black.withOpacity(0.7),
-                          spreadRadius: 3,
-                          blurRadius: 10,
+                          spreadRadius: 0.1,
+                          blurRadius: 2,
                           offset: const Offset(0, 0),
                         ),
                       ],
@@ -389,15 +395,15 @@ Widget DesktopContainer1() {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.white.withOpacity(0.7), // White glow
-                        spreadRadius: 3, // Spread radius for the glow
-                        blurRadius: 10, // Softness of the glow
+                        spreadRadius: 0.1, // Spread radius for the glow
+                        blurRadius: 2, // Softness of the glow
                         offset: const Offset(0, 0), // Centered glow
                       ),
                       BoxShadow(
                         color: Colors.black
                             .withOpacity(0.7), // Black shadow for depth
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: const Offset(0, 0),
                       ),
                     ],

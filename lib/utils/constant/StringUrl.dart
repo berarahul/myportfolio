@@ -1,7 +1,7 @@
 double? h;
 double? w;
 
-const String firstPic="assets/images/homepicture.png";
+const String firstPic="assets/images/home.jpeg";
 const String aboutPic="assets/images/about.png";
 const String servicesPic="assets/images/services.png";
 const String mobileaboutpic="assets/images/aboutmobilefinal.png";

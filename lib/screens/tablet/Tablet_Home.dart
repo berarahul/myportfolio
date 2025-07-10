@@ -201,14 +201,14 @@ class TabletHome extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.white.withOpacity(0.7),
-                      spreadRadius: 3,
-                      blurRadius: 10,
+                      spreadRadius: 0.1,
+                      blurRadius: 2,
                       offset: Offset(0, 0),
                     ),
                     BoxShadow(
                       color: Colors.black.withOpacity(0.7),
-                      spreadRadius: 3,
-                      blurRadius: 10,
+                      spreadRadius: 0.1,
+                      blurRadius: 2,
                       offset: Offset(0, 0),
                     ),
                   ],
@@ -447,14 +447,14 @@ class TabletHome extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: dpController.borderColor.value, // Observable border color for shadow
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: Offset(0, 0),
                       ),
                       BoxShadow(
                         color: Colors.black.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: Offset(0, 0),
                       ),
                     ],
@@ -480,14 +480,14 @@ class TabletHome extends StatelessWidget {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.white.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: const Offset(0, 0),
                       ),
                       BoxShadow(
                         color: Colors.black.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: const Offset(0, 0),
                       ),
                     ],
@@ -532,15 +532,15 @@ class TabletHome extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.white.withOpacity(0.7), // White glow
-                      spreadRadius: 3, // Spread radius for the glow
-                      blurRadius: 10, // Softness of the glow
+                      spreadRadius: 0.1,
+                      blurRadius: 2,// Softness of the glow
                       offset: const Offset(0, 0), // Centered glow
                     ),
                     BoxShadow(
                       color: Colors.black
                           .withOpacity(0.7), // Black shadow for depth
-                      spreadRadius: 3,
-                      blurRadius: 10,
+                      spreadRadius: 0.1,
+                      blurRadius: 2,
                       offset: const Offset(0, 0),
                     ),
                   ],

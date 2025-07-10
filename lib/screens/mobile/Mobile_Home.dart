@@ -67,14 +67,14 @@ Widget MobileContainer1() {
                     boxShadow: [
                       BoxShadow(
                         color: dpController.borderColor.value, // Observable border color for shadow
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: Offset(0, 0),
                       ),
                       BoxShadow(
                         color: Colors.black.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: Offset(0, 0),
                       ),
                     ],
@@ -100,14 +100,14 @@ Widget MobileContainer1() {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.white.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: const Offset(0, 0),
                       ),
                       BoxShadow(
                         color: Colors.black.withOpacity(0.7),
-                        spreadRadius: 3,
-                        blurRadius: 10,
+                        spreadRadius: 0.1,
+                        blurRadius: 2,
                         offset: const Offset(0, 0),
                       ),
                     ],
@@ -149,14 +149,14 @@ Widget MobileContainer1() {
             boxShadow: [
               BoxShadow(
                 color: Colors.white.withOpacity(0.7),
-                spreadRadius: 2,
-                blurRadius: 15,
+                spreadRadius: 0.1,
+                blurRadius: 2,
                 offset: Offset(0, 0),
               ),
               BoxShadow(
                 color: Colors.black.withOpacity(0.7),
-                spreadRadius: 2,
-                blurRadius: 15,
+                spreadRadius: 0.1,
+                blurRadius: 2,
                 offset: Offset(0, 0),
               ),
             ],
